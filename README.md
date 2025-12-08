@@ -6,6 +6,16 @@ A comprehensive guide demonstrating the installation and configuration of Active
 
 This project showcases the complete process of transforming a Windows Server into an Active Directory Domain Controller, demonstrating enterprise-level identity and access management skills essential for IT infrastructure administration.
 
+## 🎥 Video Walkthrough
+
+Watch the complete Active Directory configuration process:
+
+[![Configuring Active Directory](https://cdn.loom.com/sessions/thumbnails/ffbd7bc08d3c4dc8ba50f72fc4054205-with-play.gif)](https://www.loom.com/share/ffbd7bc08d3c4dc8ba50f72fc4054205)
+
+**[▶️ Watch the Full Configuration Process](https://www.loom.com/share/ffbd7bc08d3c4dc8ba50f72fc4054205)**
+
+*This video demonstrates the complete Active Directory Domain Services installation and domain controller promotion from start to finish.*
+
 ## 🏗️ Architecture
 
 **Platform**: Windows Server 2025  
