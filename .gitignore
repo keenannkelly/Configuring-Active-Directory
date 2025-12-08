@@ -1,0 +1,47 @@
+# Passwords and Secrets - NEVER COMMIT!
+*password*.txt
+*dsrm*.txt
+credentials.txt
+secrets.txt
+
+# Active Directory Backups
+*.bak
+*.dit
+*.log
+
+# Private Keys
+*.pem
+*.ppk
+*.key
+
+# Configuration Files with Sensitive Data
+*.config.backup
+*.xml.backup
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE Files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+*.evt
+*.evtx
+
+# Screenshots with Sensitive Info
+*password*.png
+*credential*.png
+*admin*.png
+
+# Temporary Files
+*.tmp
+*.temp
+
+# PowerShell Transcripts
+PowerShell_transcript*.txt
