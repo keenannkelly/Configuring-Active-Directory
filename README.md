@@ -6,10 +6,8 @@ A comprehensive guide demonstrating the installation and configuration of Active
 
 This project showcases the complete process of transforming a Windows Server into an Active Directory Domain Controller, demonstrating enterprise-level identity and access management skills essential for IT infrastructure administration.
 
-## 🎥 Video Walkthrough
-
+# 🎥 Watch Me Build This Lab!
 Watch the complete Active Directory configuration process:
-
 [![Configuring Active Directory](https://cdn.loom.com/sessions/thumbnails/ffbd7bc08d3c4dc8ba50f72fc4054205-with-play.gif)](https://www.loom.com/share/ffbd7bc08d3c4dc8ba50f72fc4054205)
 
 **[▶️ Watch the Full Configuration Process](https://www.loom.com/share/ffbd7bc08d3c4dc8ba50f72fc4054205)**
@@ -24,7 +22,7 @@ Watch the complete Active Directory configuration process:
 **Forest**: New forest creation  
 **Role**: Primary Domain Controller  
 
-## 📋 Configuration Process
+# 📋 Steps Performed
 
 ### Step 1: Open Server Manager
 - Accessed Windows Server virtual machine via RDP
@@ -40,6 +38,8 @@ Watch the complete Active Directory configuration process:
 - Initiated the Add Roles and Features Wizard
 - Prepared for Active Directory installation
 
+  <img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/63366d89-18a4-463e-b897-3069c3a88fda" />
+
 **What this does**: Launches the wizard to install server roles and features.
 
 ### Step 3: Select Installation Type
@@ -48,16 +48,13 @@ Watch the complete Active Directory configuration process:
 - Clicked **"Next"** to proceed
 - Confirmed server selection
 
-**Installation Types**:
-- **Role-based**: Install roles and features on a single server
-- **Remote Desktop Services**: Configure RDS deployment
-- **VHD-based**: Install on virtual hard disk
-
 ### Step 4: Choose Active Directory Domain Services
 - From the **Server Roles** list, selected **"Active Directory Domain Services"**
 - System prompted to add required features
 - Clicked **"Add Features"** to include management tools
 - Confirmed AD DS role selection
+
+<img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/73505441-8192-4da1-ac3c-0a38ce714177" />
 
 **Included Components**:
 - Active Directory Domain Services
@@ -85,6 +82,9 @@ Watch the complete Active Directory configuration process:
 - Verified successful installation status
 - Noted post-deployment configuration notification
 - Closed installation wizard
+
+<img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/95bb0089-5489-4d01-99a6-eed9b9d32df5" />
+
 
 **Status Check**: Installation completes but server is not yet a domain controller.
 
@@ -205,74 +205,6 @@ Global Catalog:           Yes
 - **Purpose**: Domain administrative access
 - **Security**: Change default password immediately
 
-### Default Security Groups Created
-```
-- Domain Admins
-- Enterprise Admins
-- Schema Admins
-- Domain Users
-- Domain Computers
-- Group Policy Creator Owners
-```
-
-## 🛠️ Post-Installation Tasks
-
-### Immediate Actions
-```
-1. ✅ Verify DNS configuration
-2. ✅ Create Organizational Units (OUs)
-3. ✅ Create user accounts
-4. ✅ Configure Group Policy Objects (GPOs)
-5. ✅ Set up backup strategy
-6. ✅ Configure time synchronization
-7. ✅ Document DSRM password securely
-```
-
-### DNS Verification
-```powershell
-# Check DNS server status
-Get-DnsServer
-
-# Verify DNS zones
-Get-DnsServerZone
-
-# Test DNS resolution
-nslookup keenan.local
-```
-
-### Active Directory Verification
-```powershell
-# Check domain controller status
-Get-ADDomainController
-
-# Verify domain information
-Get-ADDomain
-
-# Check forest information
-Get-ADForest
-
-# List domain users
-Get-ADUser -Filter *
-
-# Verify SYSVOL replication
-Get-SmbShare
-```
-
-## 📊 Active Directory Components
-
-### Domain Services
-- **Authentication** - Kerberos and NTLM
-- **Authorization** - Access control and permissions
-- **Directory Services** - Centralized object management
-- **Group Policy** - Centralized configuration management
-- **Replication** - Multi-master replication between DCs
-
-### Integrated DNS
-- **Forward Lookup Zones** - Name to IP resolution
-- **Reverse Lookup Zones** - IP to name resolution
-- **Dynamic Updates** - Automatic DNS record updates
-- **Secure Updates** - Only domain members can update
-
 ## 🎓 Skills Demonstrated
 
 ### Windows Server Administration
@@ -281,136 +213,6 @@ Get-SmbShare
 - ✅ Active Directory deployment
 - ✅ Domain controller configuration
 - ✅ DNS integration
-
-### Active Directory Expertise
-- ✅ Forest and domain creation
-- ✅ Domain controller promotion
-- ✅ Functional level selection
-- ✅ DSRM configuration
-- ✅ DNS integration
-
-### Enterprise IT Skills
-- ✅ Identity and access management
-- ✅ Directory services architecture
-- ✅ Security best practices
-- ✅ Disaster recovery planning
-- ✅ Infrastructure documentation
-
-## 🔄 Common Administrative Tasks
-
-### Creating Organizational Units
-```powershell
-# Create OU structure
-New-ADOrganizationalUnit -Name "Employees" -Path "DC=keenan,DC=local"
-New-ADOrganizationalUnit -Name "IT" -Path "OU=Employees,DC=keenan,DC=local"
-New-ADOrganizationalUnit -Name "HR" -Path "OU=Employees,DC=keenan,DC=local"
-```
-
-### Creating User Accounts
-```powershell
-# Create new user
-New-ADUser -Name "John Doe" `
-           -GivenName "John" `
-           -Surname "Doe" `
-           -SamAccountName "jdoe" `
-           -UserPrincipalName "jdoe@keenan.local" `
-           -Path "OU=IT,OU=Employees,DC=keenan,DC=local" `
-           -AccountPassword (ConvertTo-SecureString "P@ssw0rd123!" -AsPlainText -Force) `
-           -Enabled $true
-```
-
-### Creating Security Groups
-```powershell
-# Create security group
-New-ADGroup -Name "IT Admins" `
-            -GroupScope Global `
-            -GroupCategory Security `
-            -Path "OU=IT,OU=Employees,DC=keenan,DC=local"
-
-# Add user to group
-Add-ADGroupMember -Identity "IT Admins" -Members "jdoe"
-```
-
-## 🚨 Troubleshooting Guide
-
-### DNS Issues
-**Problem**: DNS not resolving domain names
-
-**Solutions**:
-```powershell
-# Restart DNS service
-Restart-Service DNS
-
-# Check DNS forwarders
-Get-DnsServerForwarder
-
-# Verify DNS zones
-Get-DnsServerZone
-```
-
-### Replication Issues
-**Problem**: SYSVOL or AD replication failures
-
-**Solutions**:
-```powershell
-# Check replication status
-repadmin /replsummary
-
-# Force replication
-repadmin /syncall
-
-# Check SYSVOL replication
-dfsrdiag ReplicationState
-```
-
-### Authentication Issues
-**Problem**: Users cannot log in to domain
-
-**Solutions**:
-```powershell
-# Verify domain controller
-dcdiag /v
-
-# Check time synchronization
-w32tm /query /status
-
-# Verify Kerberos
-klist tickets
-```
-
-## 📈 Best Practices
-
-### Security Hardening
-- ✅ Implement least privilege access
-- ✅ Use separate admin accounts
-- ✅ Enable audit logging
-- ✅ Configure account lockout policies
-- ✅ Implement password complexity requirements
-- ✅ Regular security updates
-
-### Backup Strategy
-- ✅ System State backups (includes AD database)
-- ✅ Regular backup schedule
-- ✅ Test restore procedures
-- ✅ Document DSRM password
-- ✅ Offsite backup storage
-
-### Monitoring
-- ✅ Event log monitoring
-- ✅ Replication health checks
-- ✅ DNS health monitoring
-- ✅ Performance monitoring
-- ✅ Security audit reviews
-
-## 🌐 Integration Possibilities
-
-### Services That Can Integrate
-- **Microsoft Exchange Server** - Email services
-- **Microsoft SharePoint** - Collaboration platform
-- **Microsoft SQL Server** - Database authentication
-- **File Servers** - Centralized access control
-- **VPN Solutions** - Remote access authentication
-- **Cloud Services** - Azure AD Connect
 
 ## 💰 Enterprise Value
 
@@ -421,12 +223,6 @@ klist tickets
 - **Group Policy** - Automated configuration management
 - **Single Sign-On** - One credential for multiple resources
 
-## 📚 Additional Resources
-
-- [Active Directory Domain Services Overview](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)
-- [Install Active Directory Domain Services](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/install-active-directory-domain-services--level-100-)
-- [Active Directory Best Practices](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/best-practices-for-securing-active-directory)
-- [PowerShell Active Directory Module](https://docs.microsoft.com/powershell/module/activedirectory/)
 
 ## 👨‍💻 Author
 
