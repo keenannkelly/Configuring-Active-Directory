@@ -160,51 +160,6 @@ Watch the complete Active Directory configuration process:
 
 **Post-Restart**: Server is now a fully functional domain controller!
 
-## 🔧 Technical Specifications
-
-### Active Directory Configuration
-```
-Forest Name:              keenan.local
-Domain Name:              keenan.local
-NetBIOS Name:             KEENAN
-Forest Functional Level:  Windows Server 2016+
-Domain Functional Level:  Windows Server 2016+
-Domain Controller:        Primary DC
-DNS Server:               Integrated
-Global Catalog:           Yes
-```
-
-### Server Roles Installed
-- **Active Directory Domain Services** - Core AD functionality
-- **DNS Server** - Name resolution for domain
-- **File Replication Service** - SYSVOL replication
-- **Kerberos Key Distribution Center** - Authentication
-
-### Default Organizational Units Created
-```
-- Domain Controllers
-- Users
-- Computers
-- Builtin
-- ForeignSecurityPrincipals
-- Managed Service Accounts
-- Program Data
-```
-
-## 🔐 Security Configuration
-
-### DSRM Password
-- **Purpose**: Restore Mode administrator password
-- **Usage**: Disaster recovery and offline maintenance
-- **Best Practice**: Store securely, document separately
-- **Requirement**: Strong, complex password
-
-### Administrator Account
-- **Username**: Administrator@keenan.local
-- **Domain**: KEENAN\Administrator
-- **Purpose**: Domain administrative access
-- **Security**: Change default password immediately
-
 ## 🎓 Skills Demonstrated
 
 ### Windows Server Administration
@@ -213,16 +168,6 @@ Global Catalog:           Yes
 - ✅ Active Directory deployment
 - ✅ Domain controller configuration
 - ✅ DNS integration
-
-## 💰 Enterprise Value
-
-### Business Benefits
-- **Centralized Management** - Single point of user/computer management
-- **Security** - Unified authentication and authorization
-- **Scalability** - Supports thousands of users and computers
-- **Group Policy** - Automated configuration management
-- **Single Sign-On** - One credential for multiple resources
-
 
 ## 👨‍💻 Author
 
