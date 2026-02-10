@@ -10,7 +10,7 @@ This project showcases the complete process of transforming a Windows Server int
 Watch the complete Active Directory configuration process:
 [![Configuring Active Directory](https://cdn.loom.com/sessions/thumbnails/ffbd7bc08d3c4dc8ba50f72fc4054205-with-play.gif)](https://www.loom.com/share/ffbd7bc08d3c4dc8ba50f72fc4054205)
 
-**[▶️ Watch the Full Configuration Process](https://www.loom.com/share/ffbd7bc08d3c4dc8ba50f72fc4054205)**
+**[▶️ Watch Here](https://www.loom.com/share/ffbd7bc08d3c4dc8ba50f72fc4054205)**
 
 *This video demonstrates the complete Active Directory Domain Services installation and domain controller promotion from start to finish.*
 
